@@ -4,6 +4,27 @@ const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
 
+let modal = document.querySelector("#modal")
+modal.className = "hidden"
+
+mimicServerCall()
+.then()
+.then(changeTheHeart())
+.catch(() => {
+  modal.className = " "
+  modal.setTimeout((modal) => {modal.className = "hidden"}, 3000)
+})
+
+let heart = document.querySelectorAll(".like span")
+
+function changeTheHeart() {
+  
+  heart.className = "activated-heart"
+}
+
+heart.addEventListener("click", () => {
+  heart.className = "like-glyph"
+})
 
 
 
